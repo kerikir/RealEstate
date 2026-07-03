@@ -48,6 +48,14 @@ fun SplashScreen(
             modifier = Modifier
                 .padding(top = 16.dp)
                 .padding(horizontal = 24.dp)
+                .fillMaxSize(),
+        )
+        Text(
+            text = stringResource(R.string.lorem),
+            fontSize = 16.sp,
+            color = colorResource(R.color.black),
+            modifier = Modifier
+                .padding(24.dp)
                 .fillMaxSize()
         )
     }
