@@ -3,12 +3,18 @@ package com.kerikir.realestate.feature.splash
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -56,7 +62,32 @@ fun SplashScreen(
             color = colorResource(R.color.black),
             modifier = Modifier
                 .padding(24.dp)
-                .fillMaxSize()
+                .fillMaxSize(),
         )
+
+        Row(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 24.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Button(
+                onClick = onStartClick,
+                shape = RoundedCornerShape(50.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(R.color.blue),
+                    contentColor = colorResource(R.color.white)
+                ),
+                modifier = Modifier
+                    .weight(1f)
+                    .height(50.dp),
+            ) {
+                Text(
+                    text = "Get Started",
+                    fontSize = 20.sp,
+                    color = Color.White,
+                )
+            }
+        }
     }
 }
