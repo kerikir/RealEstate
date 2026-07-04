@@ -59,5 +59,11 @@ fun HeaderSection() {
                 fontWeight = FontWeight.Bold
             )
         }
+
+        Image(
+            painter = painterResource(R.drawable.bell_icon),
+            contentDescription = null,
+            modifier = Modifier.size(48.dp),
+        )
     }
 }
