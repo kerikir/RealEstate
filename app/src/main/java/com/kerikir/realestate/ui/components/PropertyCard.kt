@@ -2,8 +2,10 @@ package com.kerikir.realestate.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -88,6 +90,18 @@ fun PropertyCard(
                     fontSize = 13.sp,
                 )
                 Spacer(Modifier.height(8.dp))
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 12.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                ) {
+                    MetaChip(R.drawable.bed, "${item.bed} Bed")
+                    MetaChip(R.drawable.bath, "${item.bath} Bath")
+                    MetaChip(R.drawable.garage, if (item.isGarage) "Car Garage" else "non-Car Garage")
+                    MetaChip(R.drawable.size, "${item.size} m²")
+                }
             }
         }
     }
