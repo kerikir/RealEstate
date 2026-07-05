@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -68,6 +69,26 @@ fun PropertyCard(
                     .background(blue)
                     .padding(horizontal = 16.dp, vertical = 6.dp),
             )
+
+            Column(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(30.dp))
+                    .padding(horizontal = 16.dp),
+            ) {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    text = item.title,
+                    color = black,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 16.sp,
+                )
+                Text(
+                    text = item.address,
+                    color = grey,
+                    fontSize = 13.sp,
+                )
+                Spacer(Modifier.height(8.dp))
+            }
         }
     }
 }
@@ -82,7 +103,7 @@ fun PropertyCardPreview() {
         title = "Royal Apartment",
         address = "LosAngles LA",
         picPath = "pic_1",
-        price = 1500,
+        price = 15000,
         bed = 2,
         bath = 3,
         size = 350,
