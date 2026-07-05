@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kerikir.realestate.R
 
+
 @Composable
 fun CategoryItem(
     icon: Int,
@@ -34,4 +35,15 @@ fun CategoryItem(
 
         }
     }
+}
+
+
+
+@Composable
+@Preview
+fun CategoryItemPreview() {
+    CategoryItem(
+        icon = R.drawable.cat_1,
+        title = "Apartments"
+    )
 }
