@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.kerikir.realestate.R
 
 @Composable
 fun CategoriesRow() {
@@ -16,6 +17,10 @@ fun CategoriesRow() {
             .padding(top = 16.dp),
         horizontalArrangement = Arrangement.SpaceEvenly,
     ) {
-        
+        CategoryItem(R.drawable.cat_1, "House", Modifier.weight(1f))
+        CategoryItem(R.drawable.cat_2, "Apartment", Modifier.weight(1f))
+        CategoryItem(R.drawable.cat_3, "Villa", Modifier.weight(1f))
+        CategoryItem(R.drawable.cat_4, "Bungalow", Modifier.weight(1f))
+        CategoryItem(R.drawable.cat_5, "Empty land", Modifier.weight(1f))
     }
 }

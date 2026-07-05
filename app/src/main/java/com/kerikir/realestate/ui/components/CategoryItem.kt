@@ -68,7 +68,7 @@ fun CategoryItem(
 @Preview
 fun CategoryItemPreview() {
     CategoryItem(
-        icon = R.drawable.cat_1,
+        icon = R.drawable.cat_2,
         title = "Apartments"
     )
 }
