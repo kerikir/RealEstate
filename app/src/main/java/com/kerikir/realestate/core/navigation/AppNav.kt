@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -15,6 +16,8 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.kerikir.realestate.R
@@ -36,6 +39,15 @@ sealed class Screen(
 
 
 
+private val bottomDestinations = listOf(
+    Screen.Home,
+    Screen.Explorer,
+    Screen.Bookmark,
+    Screen.Profile,
+)
+
+
+
 @Composable
 private fun BottomBar(
     navController: NavController,
@@ -53,7 +65,24 @@ private fun BottomBar(
             .padding(4.dp),
         containerColor = Color.Transparent,
         tonalElevation = 0.dp,
-    ) { }
+    ) {
+        bottomDestinations.forEach { screen ->
+            val selected = currentDest?.hierarchy?.any { it.route == screen.route } == true
+            NavigationBarItem(
+                selected = selected,
+                onClick = {
+                    navController.navigate(screen.route) {
+                        popUpTo(navController.graph.findStartDestination().id) { saveState = true }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                },
+                icon = {
+
+                }
+            )
+        }
+    }
 }
 
 
