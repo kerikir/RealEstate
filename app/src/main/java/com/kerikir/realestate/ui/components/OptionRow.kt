@@ -1,5 +1,6 @@
 package com.kerikir.realestate.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
@@ -13,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -45,6 +47,11 @@ fun OptionRow(
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             color = colorResource(R.color.black),
+        )
+
+        Image(
+            painter = painterResource(R.drawable.arrow),
+            contentDescription = null,
         )
     }
 }
