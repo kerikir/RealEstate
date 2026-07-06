@@ -32,6 +32,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.kerikir.realestate.R
+import com.kerikir.realestate.feature.home.MainScreen
 import com.kerikir.realestate.feature.splash.SplashScreen
 
 
@@ -66,6 +67,9 @@ fun AppNav() {
                             }
                         }
                     )
+                }
+                composable(Screen.Home.route) {
+                    MainScreen()
                 }
             }
         }
