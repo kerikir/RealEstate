@@ -78,15 +78,17 @@ fun ProfileScreen(
                 Text(
                     text = "+12 0123456789",
                     fontSize = 16.sp,
-                    color = colorResource(R.color.black)
+                    color = colorResource(R.color.black),
                 )
                 Text(
                     text = "saraandesron@gmail.com",
                     fontSize = 16.sp,
-                    color = colorResource(R.color.black)
+                    color = colorResource(R.color.black),
                 )
             }
         }
+
+        item { Spacer(Modifier.height(24.dp)) }
     }
 }
 
