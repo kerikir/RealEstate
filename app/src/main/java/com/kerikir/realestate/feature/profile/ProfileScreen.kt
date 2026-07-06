@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.kerikir.realestate.R
+import com.kerikir.realestate.ui.components.OptionRow
 import com.kerikir.realestate.ui.components.TopBar
 
 
@@ -89,6 +90,13 @@ fun ProfileScreen(
         }
 
         item { Spacer(Modifier.height(24.dp)) }
+        item { OptionRow(title = "Account Information") }
+        item { OptionRow(title = "Security") }
+        item { OptionRow(title = "Notification") }
+        item { OptionRow(title = "Language") }
+        item { OptionRow(title = "Team & Condition") }
+        item { OptionRow(title = "Privacy Policy") }
+        item { Spacer(Modifier.height(8.dp)) }
     }
 }
 
