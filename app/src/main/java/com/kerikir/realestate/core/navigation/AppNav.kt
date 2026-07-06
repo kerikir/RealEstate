@@ -27,9 +27,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.kerikir.realestate.R
+import com.kerikir.realestate.feature.splash.SplashScreen
 
 
 @Composable
@@ -48,7 +51,23 @@ fun AppNav() {
                 .fillMaxSize()
                 .padding(inner),
         ) {
-
+            NavHost(
+                navController = navController,
+                startDestination = "splash",
+                modifier = Modifier.fillMaxSize(),
+            ) {
+                composable("splash") {
+                    SplashScreen(
+                        onStartClick = {
+                            navController.navigate(Screen.Home.route) {
+                                popUpTo("splash") { inclusive = true }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        }
+                    )
+                }
+            }
         }
     }
 }
