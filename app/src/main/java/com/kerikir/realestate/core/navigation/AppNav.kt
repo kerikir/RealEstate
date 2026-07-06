@@ -3,6 +3,8 @@ package com.kerikir.realestate.core.navigation
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -11,6 +13,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -27,6 +30,29 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.kerikir.realestate.R
+
+
+@Composable
+fun AppNav() {
+    val navController = rememberNavController()
+    val backStack by navController.currentBackStackEntryAsState()
+    val currentRoute = backStack?.destination?.route
+    val showBottomBar = currentRoute in bottomDestinations.map { it.route }
+
+    Scaffold(
+        containerColor = colorResource(R.color.light_grey),
+        contentWindowInsets = WindowInsets(0),
+    ) { inner ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(inner),
+        ) {
+
+        }
+    }
+}
+
 
 
 sealed class Screen(
