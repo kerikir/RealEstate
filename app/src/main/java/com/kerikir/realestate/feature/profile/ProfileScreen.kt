@@ -80,6 +80,11 @@ fun ProfileScreen(
                     fontSize = 16.sp,
                     color = colorResource(R.color.black)
                 )
+                Text(
+                    text = "saraandesron@gmail.com",
+                    fontSize = 16.sp,
+                    color = colorResource(R.color.black)
+                )
             }
         }
     }
