@@ -74,6 +74,12 @@ fun ProfileScreen(
                     fontWeight = FontWeight.Bold,
                     color = colorResource(R.color.black),
                 )
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    text = "+12 0123456789",
+                    fontSize = 16.sp,
+                    color = colorResource(R.color.black)
+                )
             }
         }
     }
