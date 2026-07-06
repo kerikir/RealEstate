@@ -20,6 +20,22 @@ import androidx.navigation.compose.rememberNavController
 import com.kerikir.realestate.R
 
 
+sealed class Screen(
+    val route: String,
+    val icon: Int,
+) {
+
+    data object Home : Screen("home", R.drawable.bottom_btn1)
+
+    data object Explorer : Screen("explorer", R.drawable.bottom_btn2)
+
+    data object Bookmark : Screen("bookmark", R.drawable.bottom_btn3)
+
+    data object Profile : Screen("profile", R.drawable.bottom_btn4)
+}
+
+
+
 @Composable
 private fun BottomBar(
     navController: NavController,
