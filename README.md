@@ -45,6 +45,18 @@
 
 ---
 
+## 📸 Скриншоты
+
+| Начальный экран | Главный экран |
+| :-------------: | :-----------: |
+| ![Splash](screenshots/initial_screen.png) | ![Главная](screenshots/main_screen.png) |
+
+| Список недвижимости | Экран настроек |
+| :------------: | :--------------: |
+| ![Карточка недвижимости](screenshots/list_real_estate.png) | ![Настройки](screenshots/settings_screen.png) |
+
+---
+
 ## 🧱 Особенности реализации
 
 - **UI полностью на Compose**, без XML. Экраны построены с использованием `Scaffold`, `LazyColumn`, `Row` и других composable-компонентов.
